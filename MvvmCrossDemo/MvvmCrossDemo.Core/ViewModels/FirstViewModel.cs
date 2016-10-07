@@ -34,15 +34,15 @@ namespace MvvmCrossDemo.Core.ViewModels
             }
         }
 
-        private string unitName;
-        public string UnitName
+        private string userName;
+        public string UserName
         {
-            get { return unitName; }
+            get { return userName; }
             set
             {
                 if (value != null)
                 {
-                    SetProperty(ref unitName, value);
+                    SetProperty(ref userName, value);
                 }
             }
         }
@@ -54,14 +54,14 @@ namespace MvvmCrossDemo.Core.ViewModels
         {
             ButtonCommand = new MvxCommand(() =>
             {
-                AddUnit(new Unit(UnitCode, UnitName));
+                AddUnit(new Unit(UnitCode, UserName));
                 RaisePropertyChanged(()=>UnitCodes);
             });
 
             SelectUnitCommand = new MvxCommand<Unit>(unit => 
             {
                 UnitCode = unit.UserLocation;
-                UnitName = unit.UserName;
+                UserName = unit.UserName;
             });
         }
 
@@ -75,7 +75,7 @@ namespace MvvmCrossDemo.Core.ViewModels
                 }
                 else
                 {
-                    UnitName = UnitName.Trim();
+                    UserName = UserName.Trim();
                     UnitCode = UnitCode.Trim();
                 }
             }
