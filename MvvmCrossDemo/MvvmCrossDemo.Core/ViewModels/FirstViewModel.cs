@@ -14,7 +14,7 @@ namespace MvvmCrossDemo.Core.ViewModels
         private ObservableCollection<Unit> unitCodes = new ObservableCollection<Unit>()
         {
             new Unit("IAB330","MobileAppDevelopement") ,
-            new Unit() { UnitCode="IAB230",UnitName="UbiquitousComputing"}
+            new Unit() { UserLocation="IAB230",UserName="UbiquitousComputing"}
         };
         public ObservableCollection<Unit> UnitCodes
         {
@@ -60,16 +60,16 @@ namespace MvvmCrossDemo.Core.ViewModels
 
             SelectUnitCommand = new MvxCommand<Unit>(unit => 
             {
-                UnitCode = unit.UnitCode;
-                UnitName = unit.UnitName;
+                UnitCode = unit.UserLocation;
+                UnitName = unit.UserName;
             });
         }
 
         public void AddUnit(Unit unit)
         {
-            if (unit.UnitCode != null && unit.UnitName != null)
+            if (unit.UserLocation != null && unit.UserName != null)
             {
-                if (unit.UnitName.Trim() != string.Empty && unit.UnitCode.Trim() != string.Empty)
+                if (unit.UserName.Trim() != string.Empty && unit.UserLocation.Trim() != string.Empty)
                 {
                     UnitCodes.Add(unit);
                 }

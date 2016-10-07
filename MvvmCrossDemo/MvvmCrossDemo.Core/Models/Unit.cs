@@ -8,14 +8,14 @@ namespace MvvmCrossDemo.Core.Models
 {
     public class Unit
     {
-        public string UnitCode { get; set; }
-        public string UnitName { get; set; }
+        public string UserLocation { get; set; }
+        public string UserName { get; set; }
 
         public Unit() { }
         public Unit(string unitCode, string unitName)
         {
-            UnitCode = unitCode;
-            UnitName = unitName;
+            UserLocation = unitCode;
+            UserName = unitName;
         }
     }
 }
